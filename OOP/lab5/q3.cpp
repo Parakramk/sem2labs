@@ -12,6 +12,7 @@ zero.
 */
 
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 // Function to calculate the common factor
@@ -30,6 +31,11 @@ private:
 public:
     Rational(int num = 0, int denom = 1)
     {
+        if (denom == 0)
+        {
+            cout << "Denominator is Zero.. Math Error.. Exiting" << endl;
+            exit(1);
+        }
         int cf = gcd(num, denom); // Common Factor
         numerator = num / cf;
         denominator = denom / cf;
