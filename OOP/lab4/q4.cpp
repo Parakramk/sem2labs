@@ -33,29 +33,27 @@ public:
         totalAccounts++;
     }
 
-
     void withdraw()
     {
-            double money;
-            cout << "Enter the amount you want to withdraw:"<<endl;
-            cin>>money;
-            if (balance >= money)
-            {
-                balance -= money;
-                cout << "Your total balance is: " << balance << endl;
-            }
-            else
-            {
-                cout << "You have insufficient balance!" << endl;
-            }
+        double money;
+        cout << "Enter the amount you want to withdraw:" << endl;
+        cin >> money;
+        if (balance >= money)
+        {
+            balance -= money;
+            cout << "Your total balance is: " << balance << endl;
+        }
+        else
+        {
+            cout << "You have insufficient balance!" << endl;
+        }
     }
-
 
     void deposit()
     {
         double amount;
-        cout << "Enter the amount you want to deposit:"<<endl;
-        cin>>amount;
+        cout << "Enter the amount you want to deposit:" << endl;
+        cin >> amount;
         if (amount > 0)
         {
             balance += amount;
@@ -75,13 +73,12 @@ public:
 
 int BankAccount::totalAccounts = 0; // Set Total Accounts to Zero
 
-
 int main()
 {
-    BankAccount Acc1("12AB",100.00);
-    BankAccount Acc2("23C",200.00);
-    BankAccount Acc3("342A",300.00);
-    BankAccount Acc4("413X",400.00);
+    BankAccount Acc1("12AB", 100.00);
+    BankAccount Acc2("23C", 200.00);
+    BankAccount Acc3("342A", 300.00);
+    BankAccount Acc4("413X", 400.00);
 
     Acc1.deposit();
     Acc1.withdraw();
@@ -100,4 +97,3 @@ Enter the amount you want to withdraw:
 Your total balance is: 810
 Total number of accounts: 4
 */
-

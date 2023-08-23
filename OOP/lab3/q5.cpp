@@ -1,24 +1,26 @@
 /*
-WAP to show the destructor call such that it prints the message “memory is
-released”.
+WAP to show the destructor call such that it prints the message “memory is released”.
 */
 
 #include <iostream>
 using namespace std;
 
-class desdemo 
+class desdemo
 {
-    public:
-        desdemo() {
-            cout << "Constructor called" << endl;
-            }
+public:
+    desdemo()
+    {
+        cout << "Constructor called" << endl;
+    }
 
-        ~desdemo() {
-            cout << "Memory is released" << endl;
-            }
+    ~desdemo()
+    {
+        cout << "Memory is released" << endl;
+    }
 };
 
-int main() {
+int main()
+{
     cout << "Creating an object" << endl;
     desdemo obj;
 

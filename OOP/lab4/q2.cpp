@@ -6,19 +6,20 @@ using namespace std;
 
 class pointer
 {
-    private:
-        int marks_in_C, marks_in_CPP;
-    public:
-        void input()
-        {
-            cout<< "Enter marks in C and C++."<<endl;
-            cin>>marks_in_C>>marks_in_CPP;
-        }
+private:
+    int marks_in_C, marks_in_CPP;
 
-        float average()
-        {
-            return (float(marks_in_C)+marks_in_CPP)/2;
-        }
+public:
+    void input()
+    {
+        cout << "Enter marks in C and C++." << endl;
+        cin >> marks_in_C >> marks_in_CPP;
+    }
+
+    float average()
+    {
+        return (float(marks_in_C) + marks_in_CPP) / 2;
+    }
 };
 
 int main()
@@ -31,7 +32,7 @@ int main()
 }
 
 /*
-SAMPLE OUTPUT:    
+SAMPLE OUTPUT:
 Enter marks in C and C++.
 55
 56

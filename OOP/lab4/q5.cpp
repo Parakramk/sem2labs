@@ -13,43 +13,43 @@ using namespace std;
 
 struct BankAccount
 {
-    private:
-        string AccountNumber, AccountHolderName;
-        double Balance;
-    public:
-        void CreateAccount()
-        {
-            cout << "Enter account number: ";
-            cin >> AccountNumber;
-            cout << "Enter the name of account holder: ";
-            getline(cin>>ws,AccountHolderName);
-            cout << "Set initial balance: ";
-            cin >> Balance;
-        }
-        void deposit()
-        {
-            double money;
-            cout << "Enter the amount you want to deposit:"<<endl;
-            cin>>money;
-            Balance = Balance + money;
-            // cout << "Your total balance is: " << Balance << endl;
-        }
-        void withdraw()
-        {
-            double money;
-            cout << "Enter the amount you want to withdraw:" << endl;
-            cin >> money;
-            (Balance >= money) ? (Balance -= money, cout << "Withdrawal successful." << endl) : cout << "Insufficient balance!" << endl; //Evaluate if True else Print Error
-            // (Balance >= money) ? (Balance -= money, cout << "Withdrawal successful. Your total balance is: " << Balance<< endl) : cout << "Insufficient balance!" << endl;
-            //  Balance -= (Balance >= money) ? money : (cout << "Insufficient balance!" << endl);
-        }
+private:
+    string AccountNumber, AccountHolderName;
+    double Balance;
 
-        void update()
-        {
-            cout << "Hello " << AccountHolderName << "! Your updated balance is: " << Balance << endl;
-        }
+public:
+    void CreateAccount()
+    {
+        cout << "Enter account number: ";
+        cin >> AccountNumber;
+        cout << "Enter the name of account holder: ";
+        getline(cin >> ws, AccountHolderName);
+        cout << "Set initial balance: ";
+        cin >> Balance;
+    }
+    void deposit()
+    {
+        double money;
+        cout << "Enter the amount you want to deposit:" << endl;
+        cin >> money;
+        Balance = Balance + money;
+        // cout << "Your total balance is: " << Balance << endl;
+    }
+    void withdraw()
+    {
+        double money;
+        cout << "Enter the amount you want to withdraw:" << endl;
+        cin >> money;
+        (Balance >= money) ? (Balance -= money, cout << "Withdrawal successful." << endl) : cout << "Insufficient balance!" << endl; // Evaluate if True else Print Error
+        // (Balance >= money) ? (Balance -= money, cout << "Withdrawal successful. Your total balance is: " << Balance<< endl) : cout << "Insufficient balance!" << endl;
+        //  Balance -= (Balance >= money) ? money : (cout << "Insufficient balance!" << endl);
+    }
+
+    void update()
+    {
+        cout << "Hello " << AccountHolderName << "! Your updated balance is: " << Balance << endl;
+    }
 };
-
 
 int main()
 {

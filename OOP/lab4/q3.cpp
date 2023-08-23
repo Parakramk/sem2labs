@@ -17,41 +17,46 @@ using namespace std;
 
 class Rectangle
 {
-    private:
-        int length, width;
+private:
+  int length, width;
 
-    public:
-        void input() {
-            cout << "Enter length and width of rectangle:" << endl;
-            cin >> length >> width;
-        }
+public:
+  void input()
+  {
+    cout << "Enter length and width of rectangle:" << endl;
+    cin >> length >> width;
+  }
 
-        void display() {
-            cout << "The length is " << length << " and width is " << width << endl;
-        }
+  void display()
+  {
+    cout << "The length is " << length << " and width is " << width << endl;
+  }
 };
 
-int main() {
-  //for single object
-  Rectangle* Rec1 = new Rectangle; 
+int main()
+{
+  // for single object
+  Rectangle *Rec1 = new Rectangle;
   Rec1->input();
   Rec1->display();
   delete Rec1;
 
-  //for array of objects
-  Rectangle* R;
+  // for array of objects
+  Rectangle *R;
   R = new Rectangle[3];
-  for (int i = 0; i < 3; i++) {
+  for (int i = 0; i < 3; i++)
+  {
     R[i].input();
   }
-  for (int i = 0; i < 3; i++) {
-    R[i].display(); 
+  for (int i = 0; i < 3; i++)
+  {
+    R[i].display();
   }
   delete[] R; // Free up memory used
   return 0;
 }
 /*
-Sample Output:    
+Sample Output:
 Enter length and width of rectangle:
 9
 6

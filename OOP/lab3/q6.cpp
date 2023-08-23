@@ -1,19 +1,26 @@
-// 6. Write a program that manages an array of student objects. Each student object contains a name and age. The program should prompt the user to enter the number of students and their respective names and ages. Afterward, calculate and display the average age of all the students. Furthermore, find and print the name of the oldest student in the array. Provide the code to implement this program, including the necessary class definition and the logic to calculate the average age and find the oldest student.
-
+/*
+6. Write a program that manages an array of student objects. Each student object contains a name and age.
+The program should prompt the user to enter the number of students and their respective names and ages.
+Afterward, calculate and display the average age of all the students. Furthermore, find and print the name of the oldest student in the array.
+Provide the code to implement this program, including the necessary class definition and the logic to calculate the average age
+and find the oldest student.
+*/
 #include <iostream>
 #include <string>
 using namespace std;
 
 class student
 {
-  private:
+private:
     string name;
     int age;
-  public:
+
+public:
     void Entry()
     {
-        cout << endl << "Enter the name of student: ";
-        getline(cin>>ws,name);
+        cout << endl
+             << "Enter the name of student: ";
+        getline(cin >> ws, name);
         cout << "Enter the age of student: ";
         cin >> age;
     }
@@ -35,7 +42,8 @@ int main()
     student S[30];
     for (int i = 0; i < num_stu; i++)
     {
-        cout << endl << "Enter the data of " << i+1 << " student."; 
+        cout << endl
+             << "Enter the data of " << i + 1 << " student.";
         S[i].Entry();
     }
     max = S[0].data();
@@ -46,9 +54,11 @@ int main()
             max = S[i].data();
             index = i;
         }
-        sum = sum + S[i].data(); 
+        sum = sum + S[i].data();
     }
-    cout << endl << "The averave age is: " << sum/num_stu<< endl << endl;
+    cout << endl
+         << "The averave age is: " << sum / num_stu << endl
+         << endl;
     S[index].max();
     return 0;
 }
