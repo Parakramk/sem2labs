@@ -1,4 +1,5 @@
-/* 4. Write a C++ program that defines a class called "Rectangle" with private member variables "length" and "width".
+/*
+4. Write a C++ program that defines a class called "Rectangle" with private member variables "length" and "width".
 The class should have the following member functions:
 i. A default constructor that initializes both "length" and "width" to 0.
 ii. A parameterized constructor that takes two arguments and initializes "length" and "width" accordingly.
@@ -11,24 +12,20 @@ Then, pass this object to the "doubleSize" function, and display the area of the
 #include <iostream>
 using namespace std;
 
-class Rectangle
-{
+class Rectangle {
 private:
     float length, width;
 
 public:
-    Rectangle()
-    {
+    Rectangle() {
         length = 0;
         width = 0;
     }
-    Rectangle(float l, float w)
-    {
+    Rectangle(float l, float w) {
         length = l;
         width = w;
     }
-    float calculateArea()
-    {
+    float calculateArea() {
         return length * width;
     }
     Rectangle doubleSize(Rectangle R) // function to double sides by taking object as argument
@@ -40,8 +37,7 @@ public:
     }
 };
 
-int main()
-{
+int main() {
     Rectangle R1(4, 5);
     Rectangle R2, R3;
     R3 = R2.doubleSize(R1);

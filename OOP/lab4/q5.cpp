@@ -1,5 +1,5 @@
 /*
-Define a structure called BankAccount to represent a bank account with
+5. Define a structure called BankAccount to represent a bank account with
 attributes such as account number, account holder name, and account
 balance. Include methods to deposit and withdraw money from the
 account. In the main function, create an instance of the BankAccount
@@ -11,15 +11,13 @@ a deposit, perform a withdrawal, and print the updated account balance.
 #include <string>
 using namespace std;
 
-struct BankAccount
-{
+struct BankAccount {
 private:
     string AccountNumber, AccountHolderName;
     double Balance;
 
 public:
-    void CreateAccount()
-    {
+    void CreateAccount() {
         cout << "Enter account number: ";
         cin >> AccountNumber;
         cout << "Enter the name of account holder: ";
@@ -27,16 +25,14 @@ public:
         cout << "Set initial balance: ";
         cin >> Balance;
     }
-    void deposit()
-    {
+    void deposit() {
         double money;
         cout << "Enter the amount you want to deposit:" << endl;
         cin >> money;
         Balance = Balance + money;
         // cout << "Your total balance is: " << Balance << endl;
     }
-    void withdraw()
-    {
+    void withdraw() {
         double money;
         cout << "Enter the amount you want to withdraw:" << endl;
         cin >> money;
@@ -45,14 +41,12 @@ public:
         //  Balance -= (Balance >= money) ? money : (cout << "Insufficient balance!" << endl);
     }
 
-    void update()
-    {
+    void update() {
         cout << "Hello " << AccountHolderName << "! Your updated balance is: " << Balance << endl;
     }
 };
 
-int main()
-{
+int main() {
     BankAccount Acc1;
     Acc1.CreateAccount();
     Acc1.deposit();

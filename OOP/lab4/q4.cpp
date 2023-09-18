@@ -1,5 +1,5 @@
 /*
-Create a C++ program that simulates a banking system. Define a class
+4. Create a C++ program that simulates a banking system. Define a class
 called BankAccount with private member variables accountNumber,
 balance, and a static member variable totalAccounts to keep track of the
 total number of bank accounts created. Implement the following
@@ -18,63 +18,53 @@ number of bank accounts created.
 #include <string>
 using namespace std;
 
-class BankAccount
-{
+class BankAccount {
 private:
     static int totalAccounts;
     string accountNumber;
     double balance;
 
 public:
-    BankAccount(string accnum, double money) // Parameterized constructor to assigns the values
-    {
+    BankAccount(string accnum, double money) {
         accountNumber = accnum;
         balance = money;
         totalAccounts++;
     }
 
-    void withdraw()
-    {
+    void withdraw() {
         double money;
         cout << "Enter the amount you want to withdraw:" << endl;
         cin >> money;
-        if (balance >= money)
-        {
+        if (balance >= money) {
             balance -= money;
             cout << "Your total balance is: " << balance << endl;
         }
-        else
-        {
+        else {
             cout << "You have insufficient balance!" << endl;
         }
     }
 
-    void deposit()
-    {
+    void deposit() {
         double amount;
         cout << "Enter the amount you want to deposit:" << endl;
         cin >> amount;
-        if (amount > 0)
-        {
+        if (amount > 0) {
             balance += amount;
             cout << "Deposited " << amount << ". Your total balance is: " << balance << endl;
         }
-        else
-        {
+        else {
             cout << "Invalid amount for deposit!" << endl;
         }
     }
 
-    static int getTotalAccounts()
-    {
+    static int getTotalAccounts() {
         return totalAccounts;
     }
 };
 
 int BankAccount::totalAccounts = 0; // Set Total Accounts to Zero
 
-int main()
-{
+int main() {
     BankAccount Acc1("12AB", 100.00);
     BankAccount Acc2("23C", 200.00);
     BankAccount Acc3("342A", 300.00);

@@ -1,5 +1,5 @@
 /*
-Create a class PositiveInteger that represents a positive integer. Implement
+1. Create a class PositiveInteger that represents a positive integer. Implement
 an overloaded unary operator - to perform negation on a positive integer
 and return its negated value. The PositiveInteger class should ensure that
 the value remains positive at all times, even after negation.
@@ -8,30 +8,25 @@ the value remains positive at all times, even after negation.
 #include <iostream>
 using namespace std;
 
-class PositiveInteger
-{
+class PositiveInteger {
 private:
     int value;
 
 public:
-    PositiveInteger(int val)
-    {
+    PositiveInteger(int val) {
         val > 0 ? value = val : (cout << "Value cannot be less than 0. Setting value to 0." << endl, value = 0);
     }
 
-    int getValue() const
-    {
+    int getValue() const {
         return value;
     }
 
-    int operator-() const
-    {
+    int operator-() const {
         return -value;
     }
 };
 
-int main()
-{
+int main() {
     PositiveInteger num1(10);
     PositiveInteger num2(5);
 
@@ -41,12 +36,12 @@ int main()
     cout << "Original num1: " << num1.getValue() << endl;
     cout << "Negative of num1: " << negNum1 << endl;
     cout << "Original num1: " << num1.getValue() << endl
-         << endl; // To Show Original Value hasn't Changed
+        << endl; // To Show Original Value hasn't Changed
 
     cout << "Original num2: " << num2.getValue() << endl;
     cout << "Negative of num2: " << negNum2 << endl;
     cout << "Original num2: " << num2.getValue() << endl
-         << endl; // To Show Original Value hasn't Changed
+        << endl; // To Show Original Value hasn't Changed
     return 0;
 }
 /*

@@ -1,25 +1,23 @@
-/*2. Create a class called “Time” with data member hour, minute and second.
+/*
+2. Create a class called “Time” with data member hour, minute and second.
  Initialize all the data member using constructor. WAP to add two Time object using necessary member functions and display the result.
 */
 #include <iostream>
 using namespace std;
 
-class Time
-{
+class Time {
 private:
     int hour, minute, second;
 
 public:
-    Time(int h, int min, int sec)
-    {
+    Time(int h, int min, int sec) {
         hour = h;
         minute = min;
         second = sec;
     }
     void add(Time t1, Time t2);
 
-    void displayTime()
-    {
+    void displayTime() {
         cout << hour << ":" << minute << ":" << second << endl;
     }
 };
@@ -32,8 +30,7 @@ void Time::add(Time t1, Time t2) // functions defination outside the class
     second = (total % 3600) % 60;
 }
 
-int main()
-{
+int main() {
     Time Time1(5, 30, 45);
     Time Time2(3, 15, 20);
     Time Time3(0, 0, 0);

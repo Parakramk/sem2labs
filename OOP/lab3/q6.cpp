@@ -9,56 +9,48 @@ and find the oldest student.
 #include <string>
 using namespace std;
 
-class student
-{
+class student {
 private:
     string name;
     int age;
 
 public:
-    void Entry()
-    {
+    void Entry() {
         cout << endl
-             << "Enter the name of student: ";
+            << "Enter the name of student: ";
         getline(cin >> ws, name);
         cout << "Enter the age of student: ";
         cin >> age;
     }
-    int data()
-    {
+    int data() {
         return age;
     }
-    void max()
-    {
+    void max() {
         cout << name << " is the oldest with " << age << " age." << endl;
     }
 };
 
-int main()
-{
+int main() {
     int num_stu, max, index = 0, sum = 0;
     cout << "Enter the number of student: ";
     cin >> num_stu;
     student S[30];
-    for (int i = 0; i < num_stu; i++)
-    {
+    for (int i = 0; i < num_stu; i++) {
         cout << endl
-             << "Enter the data of " << i + 1 << " student.";
+            << "Enter the data of " << i + 1 << " student.";
         S[i].Entry();
     }
     max = S[0].data();
-    for (int i = 0; i < num_stu; i++)
-    {
-        if (max < S[i].data())
-        {
+    for (int i = 0; i < num_stu; i++) {
+        if (max < S[i].data()) {
             max = S[i].data();
             index = i;
         }
         sum = sum + S[i].data();
     }
     cout << endl
-         << "The averave age is: " << sum / num_stu << endl
-         << endl;
+        << "The averave age is: " << sum / num_stu << endl
+        << endl;
     S[index].max();
     return 0;
 }

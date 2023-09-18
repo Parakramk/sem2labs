@@ -1,5 +1,5 @@
 /*
-Create a class time having data members as hour, minute and second. Then
+1. Create a class time having data members as hour, minute and second. Then
 add two time objects taking object as an function argument and subtract
 two time objects taking objects as an function arguments and as well as
 returning object by the function concept. Implement nameless temporary
@@ -8,32 +8,27 @@ object concept somewhere in your code.
 #include <iostream>
 using namespace std;
 
-class Time
-{
+class Time {
 private:
 	int hour, minute, second;
 
 public:
-	Time()
-	{
+	Time() {
 		hour = 0;
 		minute = 0;
 		second = 0;
 	}
-	Time(int h, int m, int s)
-	{
+	Time(int h, int m, int s) {
 		hour = h;
 		minute = m;
 		second = s;
 	}
 
-	void DataEntry()
-	{
+	void DataEntry() {
 		cout << "Enter hour, minute and second respectively." << endl;
 		cin >> hour >> minute >> second;
 	}
-	Time add(Time t1, Time t2)
-	{
+	Time add(Time t1, Time t2) {
 		Time temp;
 		int total = ((t1.hour * 3600 + t1.minute * 60 + t1.second) + (t2.hour * 3600 + t2.minute * 60 + t2.second));
 		temp.hour = total / 3600;
@@ -41,8 +36,7 @@ public:
 		temp.second = (total % 3600) % 60;
 		return temp;
 	}
-	Time subtract(Time t1, Time t2)
-	{
+	Time subtract(Time t1, Time t2) {
 		int total = ((t1.hour * 3600 + t1.minute * 60 + t1.second) - (t2.hour * 3600 + t2.minute * 60 + t2.second));
 		if (total < 0)
 			total = -total; // Make difference +ve
@@ -51,14 +45,12 @@ public:
 		second = (total % 3600) % 60;
 		return Time(hour, minute, second); // nameless temporary object
 	}
-	void display()
-	{
+	void display() {
 		cout << hour << ":" << minute << ":" << second << endl;
 	}
 };
 
-int main()
-{
+int main() {
 	Time t1, t2, t3, t4, t5, t6;
 	t1.DataEntry();
 	t2.DataEntry();

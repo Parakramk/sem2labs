@@ -1,5 +1,5 @@
 /*
-You are given a Rational class that represents rational numbers (fractions).
+3. You are given a Rational class that represents rational numbers (fractions).
 The class has two private member variables: numerator (to store the
 numerator) and denominator (to store the denominator) of the rational
 number. Your task is to overload the binary operators +, -, *, and / for this
@@ -16,23 +16,19 @@ zero.
 using namespace std;
 
 // Function to calculate the common factor
-int gcd(int a, int b)
-{
+int gcd(int a, int b) {
     if (b == 0)
         return a;
     return gcd(b, a % b);
 }
 
-class Rational
-{
+class Rational {
 private:
     int numerator, denominator;
 
 public:
-    Rational(int num = 0, int denom = 1)
-    {
-        if (denom == 0)
-        {
+    Rational(int num = 0, int denom = 1) {
+        if (denom == 0) {
             cout << "Denominator is Zero.. Math Error.. Exiting" << endl;
             exit(1);
         }
@@ -41,42 +37,36 @@ public:
         denominator = denom / cf;
     }
 
-    Rational operator+(const Rational other) const
-    {
+    Rational operator+(const Rational other) const {
         int new_num = numerator * other.denominator + other.numerator * denominator;
         int new_demon = denominator * other.denominator;
         return Rational(new_num, new_demon);
     }
 
-    Rational operator-(const Rational other) const
-    {
+    Rational operator-(const Rational other) const {
         int new_num = numerator * other.denominator - other.numerator * denominator;
         int new_demon = denominator * other.denominator;
         return Rational(new_num, new_demon);
     }
 
-    Rational operator*(const Rational other) const
-    {
+    Rational operator*(const Rational other) const {
         int new_num = numerator * other.numerator;
         int new_demon = denominator * other.denominator;
         return Rational(new_num, new_demon);
     }
 
-    Rational operator/(const Rational other) const
-    {
+    Rational operator/(const Rational other) const {
         int new_num = numerator * other.denominator;
         int new_demon = denominator * other.numerator;
         return Rational(new_num, new_demon);
     }
 
-    void display() const
-    {
+    void display() const {
         cout << numerator << "/" << denominator << endl;
     }
 };
 
-int main()
-{
+int main() {
     Rational r1(4, 5);
     Rational r2(3, 4);
 

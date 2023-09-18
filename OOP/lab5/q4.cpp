@@ -1,53 +1,46 @@
-// Write a program to compare magnitude of complex numbers by overloading
-// <,>,== and != operators
+/*
+4. Write a program to compare magnitude of complex numbers by overloading
+ <,>,== and != operators
+*/
 
 #include <iostream>
 #include <cmath>
 using namespace std;
 
-class Complexx
-{
+class Complexx {
 private:
     float real, imag;
 
 public:
-    void input()
-    {
+    void input() {
         cout << "Enter real and imaginary part:" << endl;
         cin >> real >> imag;
     }
-    void display()
-    {
+    void display() {
         cout << "(" << real << " ," << imag << ")" << endl;
     }
-    float magnitude() const
-    {
+    float magnitude() const {
         return sqrt(real * real + imag * imag);
     }
 
-    bool operator<(Complexx c)
-    {
+    bool operator<(Complexx c) {
         return magnitude() < c.magnitude();
     }
 
-    bool operator>(Complexx c)
-    {
+    bool operator>(Complexx c) {
         return magnitude() > c.magnitude();
     }
 
-    bool operator==(Complexx c)
-    {
+    bool operator==(Complexx c) {
         return magnitude() == c.magnitude();
     }
 
-    bool operator!=(Complexx c)
-    {
+    bool operator!=(Complexx c) {
         return magnitude() != c.magnitude();
     }
 };
 
-int main()
-{
+int main() {
     Complexx c1, c2;
     c1.input();
     c2.input();

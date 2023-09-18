@@ -1,30 +1,26 @@
 /*
-Write a program to implement Pointer to object and member access.
+2. Write a program to implement Pointer to object and member access.
 */
 #include <iostream>
 using namespace std;
 
-class pointer
-{
+class pointer {
 private:
     int marks_in_C, marks_in_CPP;
 
 public:
-    void input()
-    {
+    void input() {
         cout << "Enter marks in C and C++." << endl;
         cin >> marks_in_C >> marks_in_CPP;
     }
 
-    float average()
-    {
+    float average() {
         return (float(marks_in_C) + marks_in_CPP) / 2;
     }
 };
 
-int main()
-{
-    pointer *P, object;
+int main() {
+    pointer* P, object;
     P = &object;
     (*P).input();
     cout << "The average is: " << P->average() << endl;

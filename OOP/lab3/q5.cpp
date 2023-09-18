@@ -5,22 +5,18 @@ WAP to show the destructor call such that it prints the message “memory is rel
 #include <iostream>
 using namespace std;
 
-class desdemo
-{
+class desdemo {
 public:
-    desdemo()
-    {
+    desdemo() {
         cout << "Constructor called" << endl;
     }
 
-    ~desdemo()
-    {
+    ~desdemo() {
         cout << "Memory is released" << endl;
     }
 };
 
-int main()
-{
+int main() {
     cout << "Creating an object" << endl;
     desdemo obj;
 
