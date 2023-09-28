@@ -1,3 +1,17 @@
+/*
+3. Develop a simple Banking System with two classes: Account and
+Transaction. The Account class represents bank accounts, including private
+data members for accountNumber, accountHolder, and balance, along with
+public member functions for initialization and data retrieval. The Transaction
+class handles individual transactions, containing private data members
+accountNumber, transactionType, and amount, and a constructor for
+transaction setup. Your task is to create a Friend function named
+processTransaction that links the Account and Transaction classes. This
+function should update the account balance based on the transaction type
+(deposit or withdrawal) and return the updated account balance. Implement
+the classes and function in C++ and demonstrate the banking system's
+functionality with appropriate test cases
+*/
 #include<iostream>
 #include<string>
 using namespace std;
